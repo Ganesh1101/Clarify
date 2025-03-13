@@ -125,6 +125,7 @@
     }
 }
 
+
 /* Navbar */
 
 .navbar {
@@ -492,6 +493,11 @@
     /* Base Card Styles */
     /* Base Card Styles */
     .card {
+        width: 12vw;
+        /* Slightly increased width */
+        height: 10vh;
+        /* Increased height */
+        padding: 0.625rem;
         display: flex;
         align-items: center;
         background: #f8f9fa;
@@ -535,6 +541,7 @@
             padding: 1rem;
         }
     }
+
 
     /* Tablets (768px - 1279px) */
     @media (max-width: 1279px) {
@@ -581,6 +588,7 @@
             font-size: 0.6875rem;
         }
     }
+
 
     /* Extra Small Mobile (Below 480px) */
     @media (max-width: 479px) {
@@ -664,6 +672,3 @@
     }
 
 
-
-
-    /* Second row (Percentage + Link) */
