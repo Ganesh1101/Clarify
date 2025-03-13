@@ -3,12 +3,13 @@ import "../assets/Styles/styles.css"; // Import the stylesheet
 
 const KPIWidget = ({ data }) => {
   return (
-    <div className="kpi-widget">
+    <div className="kpi-widget" >
       {/* Top Row: Image + KPI Values */}
       <div className="kpi-top">
         {/* Left Icon */}
-        <img src={data.icon} alt="KPI Icon" className="card-icon" />
-
+        <div className="card-icon">
+          <img src={data.icon} alt="KPI Icon" />
+        </div>
         {/* KPI Content (Two sections) */}
         <div className="kpi-content">
           {/* KPI 3 Section */}
@@ -30,15 +31,16 @@ const KPIWidget = ({ data }) => {
       </div>
 
       {/* Bottom Row: Percentage + Link */}
-      <div className="card-footer">
-      <a href={data.link} className="card-link">
-          View Details
+      <div className="kpi-card-footer">
+        <a href={data.link} className="kpi-card-link">
+          View All
         </a>
         {/* Percentage Badge */}
-        <div className="card-percentage">📈 {data.percentage}%</div>
-
+        <span className="kpi-card-percentage">
+            <img src={require("../assets/Images/ic_growth.png")} alt="Growth Icon"  /> {data.percentage}%
+          </span>
         {/* Clickable Link */}
-        
+
       </div>
     </div>
   );

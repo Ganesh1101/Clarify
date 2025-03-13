@@ -1,9 +1,10 @@
 import React from 'react';
 import '../assets/Styles/styles.css'; // Ensure the CSS file is imported
 import CardList from '../components/cardList';
+import { Link } from 'react-router-dom';
 
 const TestCases = () => {
-     const cardsData = [
+    const cardsData = [
         {
             icon: require("../assets/Images/ic_testcases.png"),
             heading: "Total Test Cases",
@@ -27,9 +28,9 @@ const TestCases = () => {
             percentage: "10.0",
             linkText: "View All",
             onClick: (title) => alert(`${title} clicked!`),
-            heading2: "KPI 3",
-            value2: "1.2",
-    
+            heading2: "KPI 4",
+            value2: "0.8",
+
         },
 
         {
@@ -46,6 +47,12 @@ const TestCases = () => {
     return (
         <div>
             <h1 className="heading">Test Cases</h1>
+            <div style={{ display: "flex", gap: "10px" }}>
+                <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
+                <Link to="/" className="breadcrumb-link">Home</Link>
+                <span className="breadcrumb-arrow">›</span>
+                <span className="breadcrumb-current">Testcases</span>
+            </div>
             <CardList cards={cardsData} />
         </div>
     );
