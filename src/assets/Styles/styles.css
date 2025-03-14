@@ -1,3 +1,37 @@
+/* Layout */
+/* Ensure the full layout is properly aligned */
+.layout-container {
+    display: flex;
+    flex-direction: column; /* Navbar stays at the top */
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Main content container */
+  .content-container {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f1f3f4;
+    overflow-y: auto;
+  }
+  
 /* Sidebar styles */
 .sidebar {
     height: 100vh;
@@ -387,269 +421,107 @@
     justify-content: center;
 }
 /* NavBar */
+/* Updated NavBar */
 .navbar {
-    width: 1920px;
-    height: 68px;
+    width: 100%;
+    height: 55px; /* Reduced height */
     display: flex;
     align-items: center;
     border-bottom: 1px solid #DCDCDD;
-    padding: 14px 24px;
+    padding: 10px 24px;
     background-color: #FFFFFF;
 }
 
 .navbar-content {
-    width: 1872px;
+    width: 90%;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo img {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-}
-
+/* Center Product Section */
 .product-section {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
 }
 
+/* Center the Product Name */
 .product-name {
-    width: 138px;
-    height: 19px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-}
-
-.plain-icon {
-    width: 16px;
-    height: 16px;
-}
-
-.nav-right {
-    width: 144px;
-    height: 36px;
     display: flex;
     align-items: center;
-    margin-right: -130px;
-    gap: 24px;
+    gap: 6px;
+    color:#2B2E48
 }
 
-.toggle img {
-    width: 36px;
-    height: 16px;
-    gap: 8px;
+/* Arrow Icon */
+.dropdown-arrow {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate Arrow when Dropdown is Open */
+.dropdown-open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 10;
+}
+
+/* Show Dropdown when Open */
+.dropdown-open .dropdown-menu {
+    display: flex;
+}
+
+/* Style Dropdown Items */
+.dropdown-menu div {
+    padding: 8px;
     cursor: pointer;
+    text-align: center;
 }
 
-.notification img {
-    width: 24px;
-    height: 24px;
-    gap: 24px;
-    cursor: pointer;
+.dropdown-menu div:hover {
+    background-color: #f4f4f4;
 }
 
-.profile img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/* ✅ Large Screens (1920px and above) */
-@media (min-width: 1920px) {
-    .navbar {
-        width: 100%;
-    }
-
-    .navbar-content {
-        width: 90%;
-    }
-}
-
-/* ✅ Medium Screens (1440px - 1919px) */
-@media (max-width: 1919px) {
-    .navbar {
-        width: 100%;
-        height: 60px;
-        padding: 12px 20px;
-    }
-
-    .navbar-content {
-        width: 85%;
-    }
-
-    .product-name {
-        font-size: 14px;
-    }
-
-    .nav-right {
-        margin-right: -196px;
-    }
-}
-
-/* ✅ Small Laptops (1280px - 1439px) */
-@media (max-width: 1439px) {
-    .navbar {
-        height: 55px;
-        padding: 10px 16px;
-    }
-
-    .navbar-content {
-        width: 80%;
-    }
-
-    .product-name {
-        font-size: 13px;
-    }
-
-    .nav-right {
-        gap: 16px;
-        margin-right: -260px;
-    }
-
-    .toggle img {
-        width: 28px;
-        height: 14px;
-    }
-
-    .notification img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .profile img {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-/* ✅ Tablets (768px - 1279px) */
-@media (max-width: 1279px) {
+/* Adjustments for Smaller Screens */
+@media (max-width: 1440px) {
     .navbar {
         height: 50px;
-        padding: 8px 12px;
-    }
-
-    .navbar-content {
-        width: 75%;
-    }
-
-    .logo img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .product-name {
-        font-size: 12px;
-    }
-
-    .nav-right {
-        gap: 12px;
-        margin-right: -280px;
-    }
-
-    .toggle img {
-        width: 24px;
-        height: 12px;
-    }
-
-    .notification img {
-        width: 18px;
-        height: 18px;
-    }
-
-    .profile img {
-        width: 28px;
-        height: 28px;
+        padding: 8px 20px;
     }
 }
 
 @media (max-width: 1024px) {
-    .nav-right {
-        gap: 12px;
-        margin-right: -230px;
+    .product-name {
+        font-size: 14px;
     }
 }
 
-/* ✅ Mobile Devices (480px - 767px) */
 @media (max-width: 767px) {
     .navbar {
         height: 45px;
-        padding: 6px 10px;
-    }
-
-    .navbar-content {
-        width: 90%;
-    }
-
-    .nav-right {
-        gap: 8px;
-        margin-right: -100px;
-    }
-
-    .toggle img {
-        width: 20px;
-        height: 10px;
-    }
-
-    .notification img {
-        width: 16px;
-        height: 16px;
-    }
-
-    .profile img {
-        width: 24px;
-        height: 24px;
+        padding: 6px 12px;
     }
 }
-
-/* ✅ Extra Small Mobile (Below 480px) */
-@media (max-width: 479px) {
-    .navbar {
-        height: 40px;
-        padding: 5px 8px;
-    }
-
-    .navbar-content {
-        width: 100%;
-    }
-
-    .logo img {
-        width: 14px;
-        height: 14px;
-    }
-
-    .nav-right {
-        gap: 6px;
-        margin-right: -50px;
-    }
-
-    .product-name {
-        font-size: 10px;
-    }
-
-    .toggle img {
-        width: 18px;
-        height: 8px;
-    }
-
-    .notification img {
-        width: 14px;
-        height: 14px;
-    }
-
-    .profile img {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-
-
-
-

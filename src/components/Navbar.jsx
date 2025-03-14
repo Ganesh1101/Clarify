@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/Styles/styles.css";
 
 const Navbar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
     <div className="navbar">
       <div className="navbar-content">
@@ -10,25 +12,36 @@ const Navbar = () => {
           <img src={require("../assets/Images/Logo.png")} alt="Logo" />
         </div>
 
-        {/* Product Name + Plain Icon */}
-        <div className="product-section">
-          <span className="product-name">Product Name</span>
-          <img src={require("../assets/Images/Plain Icons.png")}alt="" className="plain-icon" />
+        {/* Product Name Dropdown */}
+        <div 
+          className={`product-section ${dropdownOpen ? "dropdown-open" : ""}`} 
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+        >
+          <span className="product-name">
+            Product Name 
+            <img 
+              src={require("../assets/Images/Plain Icons.png")} 
+              alt="▼" 
+              className="dropdown-arrow" 
+            />
+          </span>
+          
+          {/* Dropdown Menu */}
+          <div className="dropdown-menu">
+            <div>Option 1</div>
+            <div>Option 2</div>
+            <div>Option 3</div>
+          </div>
         </div>
 
-        {/* Right Section: Toggle, Notification, Profile */}
+        {/* Right Section */}
         <div className="nav-right">
-          {/* Toggle Image */}
           <div className="toggle">
-            <img src={require("../assets/Images/ic_toggle.png")} alt="" />
+            {/* <img src={require("../assets/Images/ic_toggle.png")} alt="" /> */}
           </div>
-
-          {/* Notification Icon */}
           <div className="notification">
             <img src={require("../assets/Images/ic_bell.png")} alt="" />
           </div>
-
-          {/* Profile Image */}
           <div className="profile">
             <img src={require("../assets/Images/ic_profile.png")} alt="" />
           </div>
