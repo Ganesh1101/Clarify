@@ -386,11 +386,269 @@
     flex-direction: column;
     justify-content: center;
 }
+/* NavBar */
+.navbar {
+    width: 1920px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #DCDCDD;
+    padding: 14px 24px;
+    background-color: #FFFFFF;
+}
 
+.navbar-content {
+    width: 1872px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
 
+.product-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-/* Second row (Percentage + Link) */
+.product-name {
+    width: 138px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.plain-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-right {
+    width: 144px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    margin-right: -130px;
+    gap: 24px;
+}
+
+.toggle img {
+    width: 36px;
+    height: 16px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.notification img {
+    width: 24px;
+    height: 24px;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ✅ Large Screens (1920px and above) */
+@media (min-width: 1920px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar-content {
+        width: 90%;
+    }
+}
+
+/* ✅ Medium Screens (1440px - 1919px) */
+@media (max-width: 1919px) {
+    .navbar {
+        width: 100%;
+        height: 60px;
+        padding: 12px 20px;
+    }
+
+    .navbar-content {
+        width: 85%;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .nav-right {
+        margin-right: -196px;
+    }
+}
+
+/* ✅ Small Laptops (1280px - 1439px) */
+@media (max-width: 1439px) {
+    .navbar {
+        height: 55px;
+        padding: 10px 16px;
+    }
+
+    .navbar-content {
+        width: 80%;
+    }
+
+    .product-name {
+        font-size: 13px;
+    }
+
+    .nav-right {
+        gap: 16px;
+        margin-right: -260px;
+    }
+
+    .toggle img {
+        width: 28px;
+        height: 14px;
+    }
+
+    .notification img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ✅ Tablets (768px - 1279px) */
+@media (max-width: 1279px) {
+    .navbar {
+        height: 50px;
+        padding: 8px 12px;
+    }
+
+    .navbar-content {
+        width: 75%;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    .nav-right {
+        gap: 12px;
+        margin-right: -280px;
+    }
+
+    .toggle img {
+        width: 24px;
+        height: 12px;
+    }
+
+    .notification img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .profile img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-right {
+        gap: 12px;
+        margin-right: -230px;
+    }
+}
+
+/* ✅ Mobile Devices (480px - 767px) */
+@media (max-width: 767px) {
+    .navbar {
+        height: 45px;
+        padding: 6px 10px;
+    }
+
+    .navbar-content {
+        width: 90%;
+    }
+
+    .nav-right {
+        gap: 8px;
+        margin-right: -100px;
+    }
+
+    .toggle img {
+        width: 20px;
+        height: 10px;
+    }
+
+    .notification img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .profile img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ✅ Extra Small Mobile (Below 480px) */
+@media (max-width: 479px) {
+    .navbar {
+        height: 40px;
+        padding: 5px 8px;
+    }
+
+    .navbar-content {
+        width: 100%;
+    }
+
+    .logo img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .nav-right {
+        gap: 6px;
+        margin-right: -50px;
+    }
+
+    .product-name {
+        font-size: 10px;
+    }
+
+    .toggle img {
+        width: 18px;
+        height: 8px;
+    }
+
+    .notification img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .profile img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 
 
 

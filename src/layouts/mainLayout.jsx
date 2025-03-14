@@ -2,6 +2,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/SideNavbar"; // Import your Sidebar component
+import Navbar from "../components/Navbar";
 
 const Layout = () => {
     
@@ -17,6 +18,7 @@ const Layout = () => {
   ];
   return (
     <div style={{ display: "flex" }}>
+      <Navbar />
       {/* Sidebar */}
       <Sidebar items={menuItems}/>
 
