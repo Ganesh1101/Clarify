@@ -159,6 +159,47 @@
     letter-spacing: 0%;
     color: #2B2E48
 }
+.release-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.release-right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.release-dropdown {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.release-version-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.release-info-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    text-align: center;
+}
 
 .breadcrumb-icon {
     width: 18px;
