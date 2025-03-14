@@ -7,20 +7,22 @@ const KPIWidget = ({ data }) => {
       {/* Top Row: Image + KPI Values */}
       <div className="kpi-top">
         {/* Left Icon */}
-        <img src={data.icon} alt="KPI Icon" className="card-icon" />
+        <div className="card-icon" style={{ marginLeft: "-15px" }}>
+          <img src={data.icon} alt="KPI Icon" style={{marginTop: "19px"}} />
+        </div>
 
         {/* KPI Content (Two sections) */}
-        <div className="kpi-content">
-          {/* KPI 3 Section */}
-          <div className="kpi-section">
+        <div className="kpi-content" style={{ marginLeft: "-18px", marginTop: "-15px" }}>  
+          {/* KPI 1 Section */}
+          <div className="kpi-section" style={{ marginRight: "3px" }}>
             <span className="card-title">{data.heading}</span>
             <div className="card-value">
               {data.value} <span className="kpi-unit">/sec</span>
             </div>
           </div>
 
-          {/* KPI 4 Section */}
-          <div className="kpi-section">
+          {/* KPI 2 Section */}
+          <div className="kpi-section" style={{ marginLeft: "3px" }}>
             <span className="card-title">{data.heading2}</span>
             <div className="card-value">
               {data.value2} <span className="kpi-unit">/sec</span>
@@ -30,15 +32,14 @@ const KPIWidget = ({ data }) => {
       </div>
 
       {/* Bottom Row: Percentage + Link */}
-      <div className="card-footer">
-      <a href={data.link} className="card-link">
-          View Details
+      <div className="kpi-card-footer">
+        <a href={data.link} className="kpi-card-link">
+          View All
         </a>
         {/* Percentage Badge */}
-        <div className="card-percentage">📈 {data.percentage}%</div>
-
-        {/* Clickable Link */}
-        
+        <span className="kpi-card-percentage">
+          <img src={require("../assets/Images/ic_growth.png")} alt="Growth Icon" /> {data.percentage}%
+        </span>
       </div>
     </div>
   );
