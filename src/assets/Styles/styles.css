@@ -1157,14 +1157,14 @@ h2 {
 /* Sign In Button */
 .signin-btn {
     width: 100%;
-    padding: 12px;
-    background: #1877F2;
+    padding: 8px;
+    background: #2885FF;
     border: none;
     color: white;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .signin-btn:hover {
@@ -1184,9 +1184,8 @@ h2 {
 .login-phone {
     display: block;
     text-align: center;
-    color: #1877F2;
+    padding: 8px;
     font-size: 14px;
-    padding: 12px;
     text-decoration: none;
     font-weight: 400;
     border-radius: 5px;

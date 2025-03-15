@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/signInMobile" element={<SignInMobile/>} />
         <Route path="/verify" element={<Verification />} />
         <Route path="/forgot-password/verification" element={<ResetPasswordVerification />} />
-
+        <Route path="/success" element={<Success />} />
         <Route path="/forgot-password" element={<ForgotPassword/>} />
         <Route path="/setPassword" element={<SetPassword/>} />
         {/* Wrap all other routes inside Layout */}
