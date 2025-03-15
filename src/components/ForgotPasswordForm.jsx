@@ -15,12 +15,11 @@ const ForgotPasswordForm = ({ onVerify, heading }) => {
     };
 
     return (
-        <div className="otp-container">
+        <div className="signin-form" style={{ minHeight: "180px" }}>
             {/* Back Button and Heading */}
             <div className="otp-header">
                 <img src={require("../assets/Images/Ic_back.png")} alt="Back" className="otp-back-icon" />
                 <h2 className="otp-title">Forgot Password</h2>
-
             </div>
 
             {/* Mobile Number Input */}
@@ -29,7 +28,7 @@ const ForgotPasswordForm = ({ onVerify, heading }) => {
                 <div className="country-code">+91</div>
                 <input
                     type="text"
-                    value={formData.mobileNumber}
+                    value={mobileNumber}
                     onChange={handleChange}
                     className="mobile-input"
                 />
