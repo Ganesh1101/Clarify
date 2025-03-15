@@ -14,12 +14,12 @@ const Layout = () => {
   return (
     <div className="layout-container">
       {/* Top Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Main Content with Sidebar and Dynamic Content */}
       <div className="content-container">
         {/* Sidebar */}
-        <Sidebar items={menuItems} />
+        {/* <Sidebar items={menuItems} /> */}
 
         {/* Main Dynamic Content */}
         <div className="main-content">

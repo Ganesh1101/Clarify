@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Releases from "./pages/Release";
 import TestCases from "./pages/TestCases";
 import Settings from "./pages/Settings";
+import AuthScreen from "./components/User";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="releases" element={<Releases />} />
           <Route path="testcases" element={<TestCases />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="auth" element={<AuthScreen />} /> {/* For authentication */}
         </Route>
       </Routes>
     </Router>
