@@ -1128,6 +1128,7 @@ h2 {
     font-size: 12px;
     color: #777;
     margin: 10px 0;
+    
 }
 
 /* Login with Phone Number */
@@ -1136,8 +1137,11 @@ h2 {
     text-align: center;
     color: #1877F2;
     font-size: 14px;
+    padding: 12px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 1px solid #0a63c2;
 }
 
 .login-phone:hover {
