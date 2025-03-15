@@ -1,8 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const OTPForm = ({ onVerify, onResend,heading }) => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [timer, setTimer] = useState(90); // Start from 90 seconds
+  const [canResend, setCanResend] = useState(false); // Disable resend initially
   const inputRefs = useRef([]);
+
+  useEffect(() => {
+    if (timer > 0) {
+      const countdown = setInterval(() => {
+        setTimer((prevTime) => prevTime - 1);
+      }, 1000);
+      return () => clearInterval(countdown);
+    } else {
+      setCanResend(true); // Enable resend button when timer reaches 0
+    }
+  }, [timer]);
 
   const handleChange = (index, event) => {
     const value = event.target.value;
@@ -71,7 +84,7 @@ const OTPForm = ({ onVerify, onResend,heading }) => {
 
       {/* Resend OTP */}
       <p className="otp-resend">
-        Didn’t receive OTP? <span onClick={onResend} className="otp-resend-link">RESEND OTP</span>
+        Didn’t receive OTP? <span onClick={onResend} className="otp-resend-link">{timer}s, RESEND OTP</span>
       </p>
     </div>
   );
