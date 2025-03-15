@@ -1179,14 +1179,7 @@ h2 {
     margin: 10px 0;
 
 }
-@media screen and (min-width: 1920px) and (min-height: 1024px) {
-  .signin-form{
-    min-width: 450px;
-  }
-  .otp-container{
-    min-width: 450px;
-  }
-}
+
 /* Login with Phone Number */
 .login-phone {
     display: block;
@@ -1287,7 +1280,7 @@ h2 {
   font-size: 20px;
   font-weight: 400;
   color:#007bff;
-  margin-Left:-8px
+  margin-Left:-3px
 }
 
 .otp-text {
@@ -1300,11 +1293,13 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .otp-input {
-  width: 40px;
-  height: 50px;
+  width: 50px;
+  height: 45px;
   font-size: 20px;
   text-align: center;
   border: 1px solid #ccc;
@@ -1312,13 +1307,14 @@ h2 {
 }
 
 .otp-button {
-  background: #007bff;
+  background: #2885FF;
   color: white;
   border: none;
   padding: 10px;
   width: 100%;
   font-size: 16px;
   margin-top: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -1332,4 +1328,16 @@ h2 {
   color: #F9837C;
   cursor: pointer;
   font-weight: 400;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1920px) and (min-height: 1024px) {
+  .signin-form{
+    min-width: 450px;
+  }
+  .otp-container{
+    min-width: 450px;
+  }
+  .otp-input-container {
+    gap: 20px; /* Increase gap */
+  }
 }
