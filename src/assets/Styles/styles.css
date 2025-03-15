@@ -987,7 +987,7 @@
     height: 100vh;
     align-items: center;
     justify-content: space-between;
-    background: #f9f9f9;
+    background: #fff;
 }
 
 /* Left Image Section */
@@ -999,9 +999,10 @@
 }
 
 .image-container img {
-    max-width: 80%;
+    max-width: 95%;
     height: auto;
 }
+
 
 /* Right Form Section */
 .signin-form-wrapper {
@@ -1011,24 +1012,23 @@
     align-items: center;
     background: #1877F2; /* Blue background */
     height: 100vh;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: 48px;
+    border-bottom-left-radius: 48px;
 }
 
 /* Form Card */
 .signin-form {
     background: white;
-    padding: 40px; /* Increase padding for more space */
-   
+    padding: 30px; /* Reduce padding */
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     width: 320px;
     justify-content: center;
-    min-height: 450px;
-    /* align-items: center; */
+    min-height: 350px; /* Reduce min-height */
 }
+
 
 h2 {
     margin: 0;
@@ -1054,7 +1054,7 @@ h2 {
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
   }
   
   .input-group label {
@@ -1146,4 +1146,20 @@ h2 {
 
 .login-phone:hover {
     text-decoration: underline;
+}
+@media (max-width: 767px) {
+    .image-container {
+        display: none; /* Hide the image section */
+    }
+
+    .signin-container {
+        justify-content: center; /* Center the form */
+    }
+
+    .signin-form-wrapper {
+        flex: 1; /* Make it take full width */
+        width: 100vw;
+        height: 100vh; /* Full-screen height */
+        border-radius: 0; /* Remove rounded corners */
+    }
 }
