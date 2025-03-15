@@ -11,6 +11,8 @@ import SignInMobile from "./pages/SignInMobile";
 import OTPForm from "./components/otpContainer";
 import Verification from "./pages/Verification";
 import ResetPasswordVerification from "./pages/ResetPasswordVerification";
+import SuccessForm from "./components/successForm";
+import Success from "./pages/Success ";
 
 
 const App = () => {
@@ -22,6 +24,7 @@ const App = () => {
         <Route path="/signInMobile" element={<SignInMobile/>} />
         <Route path="/verify" element={<Verification />} />
         <Route path="/forgot-password/verification" element={<ResetPasswordVerification />} />
+        <Route path="/success" element={<Success />} />
         {/* Wrap all other routes inside Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />

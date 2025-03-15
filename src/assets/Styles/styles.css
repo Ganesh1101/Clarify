@@ -1330,6 +1330,48 @@ h2 {
   font-weight: 400;
   margin-bottom: 10px;
 }
+
+/* Success Form */
+
+.success-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: -5px;
+}
+
+.success-title {
+  font-size: 22px;
+  color: #0B8A00;
+  margin: 10px 0;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.success-message {
+  font-size: 14px;
+  color: #666;
+}
+
+.success-button {
+  background: #2885FF;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 @media screen and (min-width: 1920px) and (min-height: 1024px) {
   .signin-form{
     min-width: 450px;
@@ -1339,5 +1381,8 @@ h2 {
   }
   .otp-input-container {
     gap: 20px; /* Increase gap */
+  }
+  .success-card {
+    min-width: 450px;
   }
 }
