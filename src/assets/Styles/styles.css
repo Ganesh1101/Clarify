@@ -1179,7 +1179,14 @@ h2 {
     margin: 10px 0;
 
 }
-
+@media screen and (min-width: 1920px) and (min-height: 1024px) {
+  .signin-form{
+    min-width: 450px;
+  }
+  .otp-container{
+    min-width: 450px;
+  }
+}
 /* Login with Phone Number */
 .login-phone {
     display: block;
