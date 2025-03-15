@@ -1163,3 +1163,78 @@ h2 {
         border-radius: 0; /* Remove rounded corners */
     }
 }
+/* OTP Component */
+.otp-container {
+  background: white;
+  padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.otp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.otp-back-icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.otp-title {
+  font-size: 20px;
+  font-weight: 400;
+  color:#007bff;
+  margin-Left:-8px
+}
+
+.otp-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.otp-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.otp-resend {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.otp-resend-link {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}

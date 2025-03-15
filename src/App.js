@@ -6,6 +6,9 @@ import Releases from "./pages/Release";
 import TestCases from "./pages/TestCases";
 import Settings from "./pages/Settings";
 import SignIn from "./pages/SignIn";
+import OTPForm from "./components/otpContainer";
+import Verification from "./pages/Verification";
+import ResetPasswordVerification from "./pages/ResetPasswordVerification";
 
 
 const App = () => {
@@ -14,7 +17,8 @@ const App = () => {
       <Routes>
         {/* SignIn route is independent and does NOT use Layout */}
         <Route path="/signIn" element={<SignIn />} />
-
+        <Route path="/verify" element={<Verification />} />
+        <Route path="/forgot-password/verification" element={<ResetPasswordVerification />} />
         {/* Wrap all other routes inside Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
