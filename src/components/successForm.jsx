@@ -8,7 +8,7 @@ const SuccessForm = ( {signIn}) => {
         <img src={require("../assets/Images/ic-success.png")} alt="Success" className="success-icon" />
         <h2 className="success-title">Success!</h2>
         <p className="success-message">Your Password Successfully Updated.</p>
-        <button className="success-button" onClick={signIn}>Sign In</button>
+        <button className="signin-btn" onClick={signIn}>Sign In</button>
       </div>
   );
 };

@@ -80,7 +80,7 @@ const OTPForm = ({ onVerify, onResend,heading }) => {
       </div>
 
       {/* Verify & Proceed Button */}
-      <button className="otp-button" onClick={handleVerify}>Verify & Proceed</button>
+      <button className="signin-btn" onClick={handleVerify}>Verify & Proceed</button>
 
       {/* Resend OTP */}
       <p className="otp-resend">
