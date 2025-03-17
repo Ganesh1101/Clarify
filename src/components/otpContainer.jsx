@@ -1,9 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { verifyOTP,sendOTP } from "../redux/auth/authSlice";
 
-const OTPForm = ({ onVerify, onResend,heading }) => {
+const OTPForm = ({ heading,mobileNumber,resetTimer}) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timer, setTimer] = useState(90); // Start from 90 seconds
   const [canResend, setCanResend] = useState(false); // Disable resend initially
+  const [error, setError] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
   const inputRefs = useRef([]);
 
   useEffect(() => {
@@ -17,6 +25,48 @@ const OTPForm = ({ onVerify, onResend,heading }) => {
     }
   }, [timer]);
 
+  const onVerify = async (otp) => {
+    setSubmitted(true);
+    setError("");
+
+    if (otp.length < 6) {
+      setError("Please enter a valid 6-digit OTP.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const result = await dispatch(verifyOTP(mobileNumber, otp));
+
+      if (result.success) {
+        navigate("/dashboard"); // Redirect to dashboard after successful verification
+      } else {
+        setError(result.error || "Invalid OTP. Please try again.");
+      }
+    } catch (error) {
+      setError("Something went Wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onResend = async() => {
+     try {
+          const result = await dispatch(sendOTP(`+91${mobileNumber}`));
+    
+          if (!result.success) {
+            setError(result.error || "Failed to send OTP");
+          }else {
+            setTimer(90);
+          }
+        } catch (error) {
+          setError("An unexpected error occurred. Please try again.");
+        } finally {
+          setLoading(false);
+        }
+    console.log("Resend OTP clicked!");
+    setError(""); // Clear error when resending OTP
+  };
   const handleChange = (index, event) => {
     const value = event.target.value;
 
@@ -61,7 +111,7 @@ const OTPForm = ({ onVerify, onResend,heading }) => {
         <h2 className="otp-title">{heading}</h2>
       </div>
 
-      <p className="otp-text">Enter the OTP sent to <strong>+91-9876543210</strong></p>
+      <p className="otp-text">Enter the OTP sent to <strong>{mobileNumber}</strong></p>
 
       {/* OTP Input Fields */}
       <div className="otp-input-container">
@@ -78,7 +128,7 @@ const OTPForm = ({ onVerify, onResend,heading }) => {
           />
         ))}
       </div>
-
+      {error && <p className="error-text">{error}</p>}
       {/* Verify & Proceed Button */}
       <button className="signin-btn" onClick={handleVerify}>Verify & Proceed</button>
 

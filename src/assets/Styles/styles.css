@@ -1375,3 +1375,18 @@ h2 {
     min-width: 450px;
   }
 }
+/* Error Message */
+.error-text {
+    color: #ff4d4d; /* Bright red color */
+    font-family: "Inter", sans-serif;
+    /* background-color: #ffe6e6; */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    
+    /* border: 1px solid #ff0000; */
+  }
+  

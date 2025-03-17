@@ -40,25 +40,32 @@ export const sendOTP = (mobile_number) => async (dispatch) => {
     dispatch(setBusy(true));
     dispatch(setError(null));
     dispatch(setSuccess(null));
+
     const response = await axios.post(`${API_BASE_URL}/auth/sendOtp`, { mobile_number });
+    console.log(response.data.data);
     if (response.status === 200 || response.status === 201) {
       dispatch(setMobileNumber(mobile_number));
       dispatch(setSuccess("OTP sent successfully"));
+      return { success: true }; // Return success for handling in handleSubmit
     } else {
       dispatch(setError(response.data.message));
+      return { success: false };
     }
   } catch (error) {
-    dispatch(setError(error.response?.data?.message || 'Failed to send OTP'));
+    dispatch(setError(error.response?.data?.message || "Failed to send OTP"));
+    return { success: false };
   } finally {
     dispatch(setBusy(false));
   }
 };
+
 
 export const verifyOTP = (mobile_number, otp) => async (dispatch) => {
   try {
     dispatch(setBusy(true));
     dispatch(setError(null));
     dispatch(setSuccess(null));
+    console.log(mobile_number, otp);
     const response = await axios.post(`${API_BASE_URL}/auth/verifyOtp`, { mobile_number, otp });
     if (response.status === 200 || response.status === 201) {
       localStorage.setItem('token', response.data.data.token);
@@ -75,6 +82,7 @@ export const verifyOTP = (mobile_number, otp) => async (dispatch) => {
       dispatch(setError(response.data.message));
     }
   } catch (error) {
+    console.error("Error decoding token:", error);
     dispatch(setError(error.response?.data?.message || 'Failed to verify OTP'));
   } finally {
     dispatch(setBusy(false));
@@ -147,8 +155,9 @@ export const signIn = (company_id, email, password) => async (dispatch) => {
     dispatch(setSuccess(null));
     const response = await axios.post(`${API_BASE_URL}/auth/signIn`, { company_id, email, password });
     if (response.status === 200 || response.status === 201) {
+      console.log(response.data.data);
       const { id, token } = response.data.data;
-      localStorage.setItem('token', token);
+      localStorage.setItem('token', response.data.data.token);
       dispatch(setToken(token));
       dispatch(setSuccess('Login successful'));
       dispatch(setUpdateSuccess(true));
