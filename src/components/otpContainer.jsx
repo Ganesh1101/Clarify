@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { verifyOTP,sendOTP } from "../redux/auth/authSlice";
 
-const OTPForm = ({ heading,mobileNumber,resetTimer}) => {
+const OTPForm = ({ heading,mobileNumber}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -28,36 +28,39 @@ const OTPForm = ({ heading,mobileNumber,resetTimer}) => {
   const onVerify = async (otp) => {
     setSubmitted(true);
     setError("");
-
+  
     if (otp.length < 6) {
       setError("Please enter a valid 6-digit OTP.");
       return;
     }
-
+  
     setLoading(true);
     try {
-      const result = await dispatch(verifyOTP(mobileNumber, otp));
-
-      if (result.success) {
-        navigate("/dashboard"); // Redirect to dashboard after successful verification
+      const result = await dispatch(verifyOTP(mobileNumber, otp)); 
+  
+      if (result?.success) { // ✅ Properly check result
+        navigate("/"); 
       } else {
-        setError(result.error || "Invalid OTP. Please try again.");
+        setError(result?.error || "Invalid OTP. Please try again."); // ✅ Handle undefined result
       }
     } catch (error) {
-      setError("Something went Wrong. Please try again.");
+      console.error(error);
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
+  
 
   const onResend = async() => {
      try {
-          const result = await dispatch(sendOTP(`+91${mobileNumber}`));
+          const result = await dispatch(sendOTP(`${mobileNumber}`));
     
           if (!result.success) {
             setError(result.error || "Failed to send OTP");
           }else {
             setTimer(90);
+            setOtp(["", "", "", "", "", ""]);
           }
         } catch (error) {
           setError("An unexpected error occurred. Please try again.");
@@ -100,11 +103,14 @@ const OTPForm = ({ heading,mobileNumber,resetTimer}) => {
 
   const handleVerify = () => {
     const enteredOtp = otp.join("");
-    onVerify(enteredOtp); // Callback with OTP value
+    if(heading === "Verification"){
+      onVerify(enteredOtp); // Callback with OTP value
+    }
   };
 
   return (
-    <div className="otp-container">
+    <div className={`otp-container`}>
+
       {/* Header with Image-based Back Arrow */}
       <div className="otp-header">
         <img src={require("../assets/Images/Ic_back.png")} alt="Back" className="otp-back-icon" />
@@ -124,7 +130,7 @@ const OTPForm = ({ heading,mobileNumber,resetTimer}) => {
             onChange={(e) => handleChange(index, e)}
             onKeyDown={(e) => handleKeyDown(index, e)}
             ref={(el) => (inputRefs.current[index] = el)}
-            className="otp-input"
+            className={`otp-input ${error ? "error-border" : ""}`}
           />
         ))}
       </div>

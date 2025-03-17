@@ -66,28 +66,36 @@ export const verifyOTP = (mobile_number, otp) => async (dispatch) => {
     dispatch(setError(null));
     dispatch(setSuccess(null));
     console.log(mobile_number, otp);
+
     const response = await axios.post(`${API_BASE_URL}/auth/verifyOtp`, { mobile_number, otp });
+
     if (response.status === 200 || response.status === 201) {
       localStorage.setItem('token', response.data.data.token);
       dispatch(setToken(response.data.data.token));
       dispatch(setSuccess('Verified Successfully'));
       dispatch(setUpdateSuccess(true));
+
       try {
         const decodedToken = jwtDecode(response.data.data.token);
         localStorage.setItem("role", decodedToken.role);
       } catch (error) {
         console.error("Error decoding token:", error);
       }
+
+      return { success: true, data: response.data }; // ✅ Return success
     } else {
       dispatch(setError(response.data.message));
+      return { success: false, error: response.data.message }; // ✅ Return failure
     }
   } catch (error) {
     console.error("Error decoding token:", error);
     dispatch(setError(error.response?.data?.message || 'Failed to verify OTP'));
+    return { success: false, error: error.response?.data?.message || 'Failed to verify OTP' }; // ✅ Handle errors
   } finally {
     dispatch(setBusy(false));
   }
 };
+
 
 export const forgotPasswordVerification = (mobile_number, otp) => async (dispatch) => {
   try {
