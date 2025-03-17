@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { forgotPassword } from "../redux/auth/authSlice";
+import {  sendOTP } from "../redux/auth/authSlice";
 
 const ForgotPasswordForm = ({ heading }) => {
     const [mobileNumber, setMobileNumber] = useState("");
@@ -12,7 +12,7 @@ const ForgotPasswordForm = ({ heading }) => {
 
     useEffect(() => {
         if (success) {
-            navigate("/forgot-password/verification"); // Change this to the desired route
+            navigate("/forgot-password/verification", { state: { mobileNumber: `+91${mobileNumber}` } }); // Change this to the desired route
         }
     }, [success, navigate]);
 
@@ -30,7 +30,7 @@ const ForgotPasswordForm = ({ heading }) => {
             return;
         }
         setErrorMessage(""); 
-        dispatch(forgotPassword(`+91${mobileNumber}`));
+        dispatch(sendOTP(`+91${mobileNumber}`));
     };
 
 
@@ -51,7 +51,7 @@ const ForgotPasswordForm = ({ heading }) => {
                     value={mobileNumber}
                     onChange={handleChange}
                     className="mobile-input"
-                    style={{ border: errorMessage ? "1px solid red" : "" }}
+                    style={{ border: errorMessage ? "1px solid #F9837C" : "" }}
                     required
                 />
 

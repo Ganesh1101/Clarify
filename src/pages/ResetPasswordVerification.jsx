@@ -1,19 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import AuthLayout from "../components/authLayout";
-import SignInForm from "../components/SignInForm";
 import OTPForm from "../components/otpContainer";
 
 const ResetPasswordVerification= () => {
-    const handleVerify = (otp) => {
-        console.log("Entered OTP:", otp);
-      };
-    
-      const handleResend = () => {
-        console.log("Resend OTP clicked!");
-      };
+  const location = useLocation();
+  const mobileNumber = location.state?.mobileNumber || "Unknown";
   return (
     <AuthLayout>
-      <OTPForm heading={"Forgot Password Verification"}  onVerify={handleVerify} onResend={handleResend} />
+      <OTPForm 
+      heading="Forgot Password Verification"
+      mobileNumber={mobileNumber}  
+      />
     </AuthLayout>
   );
 };

@@ -10,8 +10,8 @@ const {
 } = require('../controllers/authController');
 router.post('/sendOtp', sendOTP);
 router.post('/verifyOtp', otpVerification);
-router.post('/forgotPassword', forgotPassword);
-router.post('/forgotPasswordVerification', forgotPasswordVerification);
+// router.post('/forgotPassword', forgotPassword);
+// router.post('/forgotPasswordVerification', forgotPasswordVerification);
 router.post('/resetPassword', resetPassword);
 router.post('/signIn',signIn)
 module.exports = router;

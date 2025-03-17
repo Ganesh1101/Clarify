@@ -97,44 +97,6 @@ export const verifyOTP = (mobile_number, otp) => async (dispatch) => {
 };
 
 
-export const forgotPasswordVerification = (mobile_number, otp) => async (dispatch) => {
-  try {
-    dispatch(setBusy(true));
-    dispatch(setError(null));
-    dispatch(setSuccess(null));
-    const response = await axios.post(`${API_BASE_URL}/auth/forgotPasswordVerification`, { mobile_number, otp });
-    if (response.status === 200 || response.status === 201) {
-      dispatch(setSuccess("Password verified successfully"));
-    } else {
-      dispatch(setError(response.data.message));
-    }
-  } catch (error) {
-    dispatch(setError(error.response?.data?.message || 'Failed to verify password'));
-  } finally {
-    dispatch(setBusy(false));
-  }
-};
-
-export const forgotPassword = (mobile_number) => async (dispatch) => {
-  try {
-    dispatch(setBusy(true));
-    dispatch(setError(null));
-    dispatch(setSuccess(null));
-    const response = await axios.post(`${API_BASE_URL}/auth/forgotPassword`, { mobile_number });
-    if (response.status === 200 || response.status === 201) {
-      dispatch(setMobileNumber(mobile_number));
-      dispatch(setSuccess("OTP sent for password reset"));
-    } else {
-      dispatch(setError(response.data.message));
-    }
-    console.log(response.data);
-  } catch (error) {
-    dispatch(setError(error.response?.data?.message || 'Failed to send otp'));
-  } finally {
-    dispatch(setBusy(false));
-  }
-};
-
 export const resetPassword = (mobile_number, newPassword, confirmPassword) => async (dispatch) => {
   try {
     dispatch(setBusy(true));

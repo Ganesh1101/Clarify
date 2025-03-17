@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { verifyOTP,sendOTP } from "../redux/auth/authSlice";
+import { verifyOTP, sendOTP } from "../redux/auth/authSlice";
 
-const OTPForm = ({ heading,mobileNumber}) => {
+const OTPForm = ({ heading, mobileNumber }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timer, setTimer] = useState(90); // Start from 90 seconds
   const [canResend, setCanResend] = useState(false); // Disable resend initially
   const [error, setError] = useState("");
-    const [submitted, setSubmitted] = useState(false);
-    const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const inputRefs = useRef([]);
 
   useEffect(() => {
@@ -28,18 +28,18 @@ const OTPForm = ({ heading,mobileNumber}) => {
   const onVerify = async (otp) => {
     setSubmitted(true);
     setError("");
-  
+
     if (otp.length < 6) {
       setError("Please enter a valid 6-digit OTP.");
       return;
     }
-  
+
     setLoading(true);
     try {
-      const result = await dispatch(verifyOTP(mobileNumber, otp)); 
-  
+      const result = await dispatch(verifyOTP(mobileNumber, otp));
+
       if (result?.success) { // ✅ Properly check result
-        navigate("/"); 
+        navigate("/");
       } else {
         setError(result?.error || "Invalid OTP. Please try again."); // ✅ Handle undefined result
       }
@@ -50,26 +50,27 @@ const OTPForm = ({ heading,mobileNumber}) => {
       setLoading(false);
     }
   };
-  
 
-  const onResend = async() => {
-     try {
-          const result = await dispatch(sendOTP(`${mobileNumber}`));
-    
-          if (!result.success) {
-            setError(result.error || "Failed to send OTP");
-          }else {
-            setTimer(90);
-            setOtp(["", "", "", "", "", ""]);
-          }
-        } catch (error) {
-          setError("An unexpected error occurred. Please try again.");
-        } finally {
-          setLoading(false);
-        }
+
+  const onResend = async () => {
+    try {
+      const result = await dispatch(sendOTP(`${mobileNumber}`));
+
+      if (!result.success) {
+        setError(result.error || "Failed to send OTP");
+      } else {
+        setTimer(90);
+        setOtp(["", "", "", "", "", ""]);
+      }
+    } catch (error) {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
     console.log("Resend OTP clicked!");
     setError(""); // Clear error when resending OTP
   };
+
   const handleChange = (index, event) => {
     const value = event.target.value;
 
@@ -103,9 +104,8 @@ const OTPForm = ({ heading,mobileNumber}) => {
 
   const handleVerify = () => {
     const enteredOtp = otp.join("");
-    if(heading === "Verification"){
-      onVerify(enteredOtp); // Callback with OTP value
-    }
+    onVerify(enteredOtp); // Callback with OTP value
+    
   };
 
   return (
