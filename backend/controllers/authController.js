@@ -88,6 +88,7 @@ exports.otpVerification = async (req, res) => {
 exports.resetPassword = async (req, res) => {
     try {
         const { mobile_number, newPassword, confirmPassword } = req.body;
+        console.log(mobile_number, newPassword, confirmPassword);
         if (!mobile_number || !newPassword || !confirmPassword) {
             return res.status(400).json(baseResponses.constantMessages.ALL_FIELDS_REQUIRED());
         }

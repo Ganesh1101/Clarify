@@ -108,7 +108,7 @@ export const resetPassword = (mobile_number, newPassword, confirmPassword) => as
       dispatch(setBusy(false));
       return;
     }
-    const response = await axios.post(`${API_BASE_URL}/auth/resetPassword`, { mobile_number, newPassword });
+    const response = await axios.post(`${API_BASE_URL}/auth/resetPassword`, { mobile_number, newPassword,confirmPassword });
 
     if (response.status === 200 || response.status === 201) {
       dispatch(setSuccess("Password reset successfully"));

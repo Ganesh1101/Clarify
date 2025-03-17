@@ -2,22 +2,30 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { resetPassword } from "../redux/auth/authSlice";
 import "../assets/Styles/styles.css"; // Import the stylesheet
-
+import { useNavigate } from "react-router-dom";
 const SetPasswordForm = (mobileNumber) => {
     const dispatch = useDispatch();
+    const navigate=useNavigate();
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleUpdatePassword = () => {
+    const handleUpdatePassword = (event) => {
+        event.preventDefault(); // Prevent form refresh
         if (newPassword !== confirmPassword) {
             setError("Passwords do not match");
         } else {
             setError("");
-            dispatch(resetPassword(mobileNumber, newPassword, confirmPassword));
-            console.log("Form submitted", newPassword,confirmPassword);
+           const result = dispatch(resetPassword(mobileNumber.mobileNumber, newPassword, confirmPassword));
+           if (result.success) {
+              navigate("/");
+           }else{
+               setError(result.error || "Failed to reset password");
+           }
+            // console.log("Form submitted", newPassword, confirmPassword);
         }
     };
+    
 
     return (
         <form className="signin-form" style={{ minHeight: "300px" }} onSubmit={handleUpdatePassword}>

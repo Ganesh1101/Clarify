@@ -40,8 +40,8 @@ const OTPForm = ({ heading, mobileNumber,next}) => {
 
       if (result?.success) { // ✅ Properly check result
         navigate(next);
-        if(heading!=="Verification"){
-          navigate(next, { state: { mobileNumber: `+91${mobileNumber}` } });
+        if(heading!="Verification"){
+          navigate(next, { state: { mobileNumber: `${mobileNumber}` } });
         }
       } else {
         setError(result?.error || "Invalid OTP. Please try again."); // ✅ Handle undefined result
