@@ -98,6 +98,7 @@ export const verifyOTP = (mobile_number, otp) => async (dispatch) => {
 
 
 export const resetPassword = (mobile_number, newPassword, confirmPassword) => async (dispatch) => {
+  console.log(mobile_number,newPassword,confirmPassword);
   try {
     dispatch(setBusy(true));
     dispatch(setError(null));
@@ -108,6 +109,7 @@ export const resetPassword = (mobile_number, newPassword, confirmPassword) => as
       return;
     }
     const response = await axios.post(`${API_BASE_URL}/auth/resetPassword`, { mobile_number, newPassword });
+
     if (response.status === 200 || response.status === 201) {
       dispatch(setSuccess("Password reset successfully"));
     } else {

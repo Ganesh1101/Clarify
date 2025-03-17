@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { resetPassword } from "../redux/auth/authSlice";
 import "../assets/Styles/styles.css"; // Import the stylesheet
 
-const SetPasswordForm = ({ onUpdatePassword }) => {
+const SetPasswordForm = (mobileNumber) => {
+    const dispatch = useDispatch();
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
@@ -11,13 +14,13 @@ const SetPasswordForm = ({ onUpdatePassword }) => {
             setError("Passwords do not match");
         } else {
             setError("");
-            // onUpdatePassword(newPassword);
+            dispatch(resetPassword(mobileNumber, newPassword, confirmPassword));
             console.log("Form submitted", newPassword,confirmPassword);
         }
     };
 
     return (
-        <div className="signin-form" style={{ minHeight: "220px" }}>
+        <form className="signin-form" style={{ minHeight: "300px" }} onSubmit={handleUpdatePassword}>
             {/* Back Button and Heading */}
             <div className="otp-header">
                 <img src={require("../assets/Images/Ic_back.png")} alt="Back" className="back-icon" />
@@ -50,13 +53,13 @@ const SetPasswordForm = ({ onUpdatePassword }) => {
           />
         </div>
 
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className="error-text">{error}</p>}
 
             {/* Update Button */}
             <button className="signin-btn" onClick={handleUpdatePassword}>
                 Update Password
             </button>
-        </div>
+        </form>
     );
 };
 
