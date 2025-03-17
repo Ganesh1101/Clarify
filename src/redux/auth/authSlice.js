@@ -162,6 +162,7 @@ export const signIn = (company_id, email, password) => async (dispatch) => {
       dispatch(setError(response.data.message));
     }
   } catch (error) {
+    console.log("Error:", error);
     dispatch(setError(error.response?.data?.message || 'Failed to sign in'));
   } finally {
     dispatch(setBusy(false));
