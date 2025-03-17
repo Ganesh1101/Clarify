@@ -30,6 +30,8 @@ const SignInMobileForm = () => {
           <div className="country-code">+91</div>
           <input
             type="text"
+            name="mobileNumber"
+            id="mobileNumber"
             value={formData.mobileNumber}
             onChange={handleChange}
             className="mobile-input"

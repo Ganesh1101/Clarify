@@ -11,7 +11,8 @@ const SetPasswordForm = ({ onUpdatePassword }) => {
             setError("Passwords do not match");
         } else {
             setError("");
-            onUpdatePassword(newPassword);
+            // onUpdatePassword(newPassword);
+            console.log("Form submitted", newPassword,confirmPassword);
         }
     };
 

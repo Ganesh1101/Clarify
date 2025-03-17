@@ -1,0 +1,18 @@
+const express = require('express');
+const router = express.Router();
+const {
+    getWorkflows,
+    getWorkflowById,
+    createWorkflow,
+    updateWorkflow,
+    deleteWorkflow
+} = require('../controllers/workflowController');
+
+// Define routes
+router.get('/', getWorkflows);
+router.get('/:id', getWorkflowById);
+router.post('/', createWorkflow);
+router.put('/:id', updateWorkflow);
+router.delete('/:id', deleteWorkflow);
+
+module.exports = router;

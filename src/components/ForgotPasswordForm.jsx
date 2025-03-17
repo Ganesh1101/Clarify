@@ -11,7 +11,8 @@ const ForgotPasswordForm = ({ onVerify, heading }) => {
     };
 
     const handleVerify = () => {
-        onVerify(mobileNumber);
+        // onVerify(mobileNumber);
+        console.log("Form submitted", mobileNumber);
     };
 
     return (
