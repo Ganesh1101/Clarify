@@ -1390,7 +1390,7 @@ h2 {
 
 /* Error Message */
 .error-text {
-    color: #ff4d4d;
+    color: #F9837C;
     /* Bright red color */
     font-family: "Inter", sans-serif;
     /* background-color: #ffe6e6; */
@@ -1410,13 +1410,13 @@ h2 {
     height: 30px;
     font-size: 20px;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid #F9837C;
     border-radius: 5px;
 }
 
 .error-message {
     font-size: 14px;
-    color: red;
+    color: #F9837C;
     margin-top: -5px;
     margin-bottom: -10px;
 }

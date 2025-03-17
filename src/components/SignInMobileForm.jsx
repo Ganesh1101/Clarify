@@ -16,7 +16,7 @@ const SignInMobileForm = () => {
   const [localError, setLocalError] = useState(""); // Local validation error
   const [submitted, setSubmitted] = useState(false); // Track form submission
   const [loading, setLoading] = useState(false); // Loading state
-  
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -36,7 +36,7 @@ const SignInMobileForm = () => {
     }
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true); // Mark form as submitted
 
@@ -61,7 +61,7 @@ const SignInMobileForm = () => {
     } finally {
       setLoading(false);
     }
-  
+
   };
 
   return (
@@ -83,7 +83,9 @@ const SignInMobileForm = () => {
             inputMode="numeric"
             pattern="[0-9]*"
             required
+            style={localError ? { border: "1px solid #F9837C" } : {}}
           />
+
         </div>
 
 
@@ -114,7 +116,7 @@ const SignInMobileForm = () => {
 
         <p className="or-text">or</p>
 
-        <a href="/login-phone" className="login-phone">
+        <a href="/signIn" className="login-phone">
           Sign in with Credentials
         </a>
       </form>
