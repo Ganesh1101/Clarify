@@ -20,6 +20,7 @@ const Verification = () => {
       <OTPForm
         heading="Verification"
         mobileNumber={mobileNumber}
+        next="/"
       />
     </AuthLayout>
   );

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { verifyOTP, sendOTP } from "../redux/auth/authSlice";
 
-const OTPForm = ({ heading, mobileNumber }) => {
+const OTPForm = ({ heading, mobileNumber,next}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -39,7 +39,7 @@ const OTPForm = ({ heading, mobileNumber }) => {
       const result = await dispatch(verifyOTP(mobileNumber, otp));
 
       if (result?.success) { // ✅ Properly check result
-        navigate("/");
+        navigate(next);
       } else {
         setError(result?.error || "Invalid OTP. Please try again."); // ✅ Handle undefined result
       }

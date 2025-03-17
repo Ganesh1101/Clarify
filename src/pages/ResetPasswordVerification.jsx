@@ -12,6 +12,7 @@ const ResetPasswordVerification= () => {
       <OTPForm 
       heading="Forgot Password Verification"
       mobileNumber={mobileNumber}  
+      next='/setPassword'
       />
     </AuthLayout>
   );
