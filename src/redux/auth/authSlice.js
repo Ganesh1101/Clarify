@@ -127,8 +127,9 @@ export const forgotPassword = (mobile_number) => async (dispatch) => {
     } else {
       dispatch(setError(response.data.message));
     }
+    console.log(response.data);
   } catch (error) {
-    dispatch(setError(error.response?.data?.message || 'Failed to send password reset OTP'));
+    dispatch(setError(error.response?.data?.message || 'Failed to send otp'));
   } finally {
     dispatch(setBusy(false));
   }

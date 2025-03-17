@@ -1059,7 +1059,8 @@
 /* Form Card */
 .signin-form {
     background: white;
-    padding: 30px; /* Reduce padding */
+    padding: 30px;
+    /* Reduce padding */
     padding-left: 35px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -1067,7 +1068,8 @@
     flex-direction: column;
     width: 320px;
     justify-content: center;
-    min-height: 350px; /* Reduce min-height */
+    min-height: 350px;
+    /* Reduce min-height */
 }
 
 
@@ -1100,7 +1102,7 @@ h2 {
     margin-bottom: 12px;
 }
 
-  .input-group label {
+.input-group label {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 5px;
@@ -1237,147 +1239,159 @@ h2 {
 
 @media (max-width: 767px) {
     .image-container {
-        display: none; /* Hide the image section */
+        display: none;
+        /* Hide the image section */
     }
 
     .signin-container {
-        justify-content: center; /* Center the form */
+        justify-content: center;
+        /* Center the form */
     }
 
     .signin-form-wrapper {
-        flex: 1; /* Make it take full width */
+        flex: 1;
+        /* Make it take full width */
         width: 100vw;
-        height: 100vh; /* Full-screen height */
-        border-radius: 0; /* Remove rounded corners */
+        height: 100vh;
+        /* Full-screen height */
+        border-radius: 0;
+        /* Remove rounded corners */
     }
 }
+
 /* OTP Component */
 .otp-container {
-  background: white;
-  padding: 20px;
-  padding-top: 15px;
-  padding-bottom: 0px;
-  border-radius: 10px;
-  text-align: center;
-  width: 350px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .otp-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .otp-back-icon {
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
 }
 
 .otp-title {
-  font-size: 20px;
-  font-weight: 400;
-  color:#007bff;
-  margin-Left:-3px
+    font-size: 20px;
+    font-weight: 400;
+    color: #007bff;
+    margin-Left: -3px
 }
 
 .otp-text {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .otp-input-container {
-  display: flex;
-  justify-content: center;
-  gap: 13px;
-  margin-bottom: 30px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .otp-input {
-  width: 35px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 35px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .otp-button {
-  background: #2885FF;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+    background: #2885FF;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .otp-resend {
-  font-size: 14px;
-  margin-top: 10px;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 .otp-resend-link {
-  color: #F9837C;
-  cursor: pointer;
-  font-weight: 400;
-  margin-bottom: 10px;
+    color: #F9837C;
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 /* Success Form */
 
 .success-card {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
 }
 
 .success-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: -5px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: -5px;
 }
 
 .success-title {
-  font-size: 22px;
-  color: #0B8A00;
-  margin: 10px 0;
-  margin-top: 0;
-  font-weight: 400;
+    font-size: 22px;
+    color: #0B8A00;
+    margin: 10px 0;
+    margin-top: 0;
+    font-weight: 400;
 }
 
 .success-message {
-  font-size: 14px;
-  color: #666;
+    font-size: 14px;
+    color: #666;
 }
 
 @media screen and (min-width: 1920px) and (min-height: 1024px) {
-  .signin-form{
-    min-width: 450px;
-  }
-  .otp-container{
-    min-width: 450px;
-  }
-  .otp-input-container {
-    gap: 25px; /* Increase gap */
-  }
-  .success-card {
-    min-width: 450px;
-  }
+    .signin-form {
+        min-width: 450px;
+    }
+
+    .otp-container {
+        min-width: 450px;
+    }
+
+    .otp-input-container {
+        gap: 25px;
+        /* Increase gap */
+    }
+
+    .success-card {
+        min-width: 450px;
+    }
 }
+
 /* Error Message */
 .error-text {
-    color: #ff4d4d; /* Bright red color */
+    color: #ff4d4d;
+    /* Bright red color */
     font-family: "Inter", sans-serif;
     /* background-color: #ffe6e6; */
     /* padding: 10px; */
@@ -1386,11 +1400,12 @@ h2 {
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
-    
+
     /* border: 1px solid #ff0000; */
-  }
-  .error-border {
-   
+}
+
+.error-border {
+
     width: 35px;
     height: 30px;
     font-size: 20px;
@@ -1398,5 +1413,10 @@ h2 {
     border: 1px solid red;
     border-radius: 5px;
 }
-  
-  
+
+.error-message {
+    font-size: 14px;
+    color: red;
+    margin-top: -5px;
+    margin-bottom: -10px;
+}
