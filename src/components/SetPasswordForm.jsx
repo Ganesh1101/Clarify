@@ -12,6 +12,10 @@ const SetPasswordForm = (mobileNumber) => {
 
     const handleUpdatePassword = (event) => {
         event.preventDefault(); // Prevent form refresh
+        if (!newPassword || !confirmPassword) {
+            setError("Both fields are required");
+            return;
+        }
         if (newPassword !== confirmPassword) {
             setError("Passwords do not match");
         } else {
