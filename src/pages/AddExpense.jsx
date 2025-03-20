@@ -8,7 +8,7 @@ const AddExpense = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
-        navigate('/dashboard/expences/upload-expense');
+        navigate('/dashboard/expenses/upload-expense');
     };
     return (
         <div>
