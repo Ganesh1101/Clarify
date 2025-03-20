@@ -92,7 +92,7 @@ exports.resetPassword = async (req, res) => {
         if (!mobile_number || !newPassword || !confirmPassword) {
             return res.status(400).json(baseResponses.constantMessages.ALL_FIELDS_REQUIRED());
         }
-        if (newPassword !== confirmPassword) {
+        if (newPassword != confirmPassword) {
             return res.status(400).json(baseResponses.constantMessages.PASSWORD_NOT_MATCH());
         }
 
@@ -104,6 +104,7 @@ exports.resetPassword = async (req, res) => {
         await user.save();
         return res.status(200).json(baseResponses.constantMessages.PASSWORD_RESET());
     } catch (error) {
+        console.log(error);
         return res.status(500).json(baseResponses.error(error.message));
     }
 };

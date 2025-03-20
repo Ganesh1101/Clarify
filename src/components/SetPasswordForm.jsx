@@ -21,11 +21,12 @@ const SetPasswordForm = (mobileNumber) => {
         } else {
             setError("");
            const result = dispatch(resetPassword(mobileNumber.mobileNumber, newPassword, confirmPassword));
-           if (result.success) {
-              navigate("/");
+           if (result.setError) {
+            setError(result.error || "Failed to reset password");
+
            }else{
-               setError(result.error || "Failed to reset password");
-           }
+            navigate("/dashboard");
+        }
             // console.log("Form submitted", newPassword, confirmPassword);
         }
     };

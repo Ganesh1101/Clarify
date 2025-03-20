@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Layout from "./layouts/mainLayout"; // Import the Layout component
 import Dashboard from "./pages/Dashboard";
 import Releases from "./pages/Release";
@@ -24,6 +24,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* SignIn route is independent and does NOT use Layout */}
+        <Route path="/" element={<Navigate to="/signIn" replace />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/signInMobile" element={<SignInMobile/>} />
         <Route path="/verify" element={<Verification />} />
@@ -32,7 +33,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword/>} />
         <Route path="/setPassword" element={<SetPassword/>} />
         {/* Wrap all other routes inside Layout */}
-        <Route path="/" element={<Layout />}>
+        <Route path="/dashboard" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="releases" element={<Releases />} />
           <Route path="testcases" element={<TestCases />} />

@@ -33,7 +33,7 @@ const SignInForm = () => {
   // Navigate to home page if login is successful
   useEffect(() => {
     if (token) {
-      navigate("/");
+      navigate("/dashboard");
     }
   }, [token, navigate]);
 
