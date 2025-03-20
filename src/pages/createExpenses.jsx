@@ -17,17 +17,16 @@ const Expensescreate = () => {
 
     return (
         <div>
-            <h1 className="heading">Expenses</h1>
-            
-            {/* Breadcrumbs */}
-            <div style={{ display: "flex", gap: "10px" }}>
-                <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
-                <Link to="/" className="breadcrumb-link">Home</Link>
-                <span className="breadcrumb-arrow">›</span>
-                <span className="breadcrumb-current">Expenses</span>
-                <span className="breadcrumb-arrow">›</span>
-                <span className="breadcrumb-currents"> New Expense</span>
-            </div>
+             {/* Header Section */}
+                      <h1 className="heading">Expenses</h1>
+                      <div style={{ display: "flex", gap: "10px" }}>
+                          <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
+                          <Link to="/" className="breadcrumb-link">Home</Link>
+                          <span className="breadcrumb-arrow">›</span>
+                          <span className="breadcrumb-current">Expenses</span>
+                          <span className="breadcrumb-arrow">›</span>
+                          <span  className="breadcrumb-current" style={{ color: "black" }}>New Expense</span>
+                      </div>
 
             {/* Main Layout with Preview on Right Side */}
             <div className="expense-container-right">

@@ -16,19 +16,16 @@ const ExpenseUpload = () => {
     return (
         <div> 
             {/* Header Section */}
-            <div className="release-header">
-                <h1 className="heading">Expenses</h1>
-            </div>
-
-            {/* Breadcrumbs */}
+            <h1 className="heading">Expenses</h1>
             <div style={{ display: "flex", gap: "10px" }}>
                 <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
                 <Link to="/" className="breadcrumb-link">Home</Link>
                 <span className="breadcrumb-arrow">›</span>
                 <span className="breadcrumb-current">Expenses</span>
                 <span className="breadcrumb-arrow">›</span>
-                <span className="breadcrumb-currents">New Expense</span>
+                <span className="breadcrumb-current" style={{ color: "black" }}>New Expense</span>
             </div>
+
 
             {/* Loading Section */}
             <div className="loading-container">

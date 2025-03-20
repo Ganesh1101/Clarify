@@ -11,14 +11,18 @@ const Sidebar = ({ items }) => {
         <NavLink
           key={index}
           to={item.route} // Navigate to the given route
-          className={({ isActive }) => 
+          className={({ isActive }) =>
             `sidebar-item ${
-              isActive || (location.pathname === "/" && item.route === "/") ? "active" : ""
+              isActive || 
+              (item.route === "/dashboard" && location.pathname === "/dashboard")
+                ? "active" 
+                : ""
             }`
           }
-          end // Ensures exact path matching
+          end={item.route === "/" || item.route === "/dashboard"} // Exact match only for Home and Dashboard
         >
           <img src={item.iconPath} alt="icon" className="sidebar-icon" />
+          <span className="sidebar-text">{item.label}</span> {/* Show text for accessibility */}
         </NavLink>
       ))}
     </div>

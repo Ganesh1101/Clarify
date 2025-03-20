@@ -8,21 +8,20 @@ const AddExpense = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
-        navigate('/dashboard/upload-expense');
+        navigate('/dashboard/expences/upload-expense');
     };
     return (
-        <div className="expense-container">
-            <div>
-                <h1 className="heading">Expenses</h1>
-                <div style={{ display: "flex", gap: "10px" }}>
-                    <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
-                    <Link to="/" className="breadcrumb-link">Home</Link>
-                    <span className="breadcrumb-arrow">›</span>
-                    <span className="breadcrumb-current">Expenses</span>
-                    <span className="breadcrumb-arrow">›</span>
-                    <span className="breadcrumb-currents"> New Expense</span>
-                </div>
-            </div>
+        <div>
+             {/* Header Section */}
+                      <h1 className="heading">Expenses</h1>
+                      <div style={{ display: "flex", gap: "10px" }}>
+                          <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
+                          <Link to="/" className="breadcrumb-link">Home</Link>
+                          <span className="breadcrumb-arrow">›</span>
+                          <span className="breadcrumb-current">Expenses</span>
+                          <span className="breadcrumb-arrow">›</span>
+                          <span className="breadcrumb-current" style={{ color: "black" }}>New Expense</span>
+                      </div>
             {/* Expense Addition Options */}
             <div className="expense-card">
                 <div className="expense-icon-container">
@@ -52,7 +51,7 @@ const AddExpense = () => {
                         <p className="expense-option-text">
                             Get step-by-step support with suggestions at your fingertips!
                         </p>
-                        <button className="expense-button-new"  onClick={() => navigate('/dashboard/create-expense')}>Add New</button>
+                        <button className="expense-button-new"  onClick={() => navigate('/dashboard/expences/create-expense')}>Add New</button>
                     </div>
                 </div>
             </div>

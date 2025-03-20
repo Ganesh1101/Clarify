@@ -44,9 +44,9 @@ const App = () => {
           <Route path="releases" element={<Releases />} />
           <Route path="testcases" element={<TestCases />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="add-expense" element={<AddExpense />} />
-          <Route path="upload-expense" element={< ExpenseUpload/>} />
-          <Route path="create-expense" element={<Expensescreate />} />
+          <Route path="expenses/add-expense" element={<AddExpense />} />
+          <Route path="expenses/upload-expense" element={< ExpenseUpload/>} />
+          <Route path="expences/create-expense" element={<Expensescreate />} />
         </Route>
       </Routes>
     </Router>

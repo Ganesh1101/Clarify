@@ -60,7 +60,7 @@ const Expenses = () => {
                 <img src={require("../assets/Images/ic_home.png")} alt="Home" className="breadcrumb-icon" />
                 <Link to="/" className="breadcrumb-link">Home</Link>
                 <span className="breadcrumb-arrow">›</span>
-                <span className="breadcrumb-currents">Expenses</span>
+                <span  className="breadcrumb-current" style={{ color: "black" }}>Expenses</span>
             </div>
 
             <div className="expensesContainer">
@@ -85,7 +85,7 @@ const Expenses = () => {
                         <select className="filter-dropdown">
                             <option>1 Month</option>
                         </select>
-                        <button className="addExpenseButton"  onClick={() => navigate('/dashboard/add-expense')}>
+                        <button className="addExpenseButton"  onClick={() => navigate('/dashboard/expenses/add-expense')}>
                             <img src={require("../assets/Images/Ic_add.png")} alt="Add" className="addExpenseIcon"  />
                             Add Expense
                         </button>

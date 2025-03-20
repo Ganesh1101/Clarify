@@ -1,4 +1,14 @@
 /* Layout */
+body {
+    overflow: auto; /* Ensures scrolling works */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    display: none;
+}
 /* Ensure the full layout is properly aligned */
 .layout-container {
   display: flex;
@@ -30,12 +40,12 @@
   flex: 1;
   padding: 20px;
   background-color: #f1f3f4;
-  overflow-y: auto;
+  /* max-height: 90%; */
 }
 
 /* Sidebar styles */
 .sidebar {
-  height: 100vh;
+  max-height: 88vh;
   width: 114px;
   /* Adjusted for consistency */
   background-color: #fff;
@@ -247,6 +257,7 @@
   letter-spacing: 0%;
   color: #7d7d7d;
 }
+
 
 /* card */
 .card {
@@ -2154,16 +2165,15 @@ h2 {
 
 /* Form Section */
 .expense-container {
-    width: 97%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
     background-color: #fff;
-    margin-top: 10px;
-    min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures content takes available space */
+    min-height: 90%; /* Full viewport height */
+    padding-bottom: 60px; /* Space for buttons */
+    position: relative;
+    padding: 20px;
+/* Space for buttons */
 
 }
 
@@ -2249,51 +2259,92 @@ h2 {
 }
 
 /* Navigation Buttons */
-
+/* Default (1920px and larger) */
 .navigation-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures buttons are at opposite ends */
     width: 100%;
-    max-width: 500px;
+    max-width: 100%; /* Spanning full width */
     margin: 20px auto 0;
-    padding: 15px 20px;
+    padding: 15px 40px; /* Ensuring padding from the sides */
     box-sizing: border-box;
 }
 
+/* Adjust padding for 1650px */
+@media screen and (max-width: 1650px) {
+    .navigation-buttons {
+        padding: 15px 35px;
+    }
+}
+
+/* Adjust padding for 1200px */
+@media screen and (max-width: 1200px) {
+    .navigation-buttons {
+        padding: 15px 30px;
+    }
+}
+
+/* Adjust padding for 992px */
+@media screen and (max-width: 992px) {
+    .navigation-buttons {
+        padding: 15px 25px;
+    }
+}
+
+/* Adjust padding for 768px */
+@media screen and (max-width: 768px) {
+    .navigation-buttons {
+        padding: 15px 20px;
+    }
+}
+
+/* Adjust padding for 576px */
+@media screen and (max-width: 576px) {
+    .navigation-buttons {
+        padding: 15px 15px;
+    }
+}
+
+/* Adjust padding for 400px */
+@media screen and (max-width: 400px) {
+    .navigation-buttons {
+        padding: 15px 10px;
+    }
+}
+
+/* Styling for buttons */
+.back-button, .next-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Inter, sans-serif;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Back button - Extreme Left */
 .back-button {
     background-color: #fff;
-    padding: 12px 24px;
     color: #2885FF;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    font-weight: 400;
-    position: relative;
-    margin-left: -400px;
-    font-family: Inter, sans-serif;
+    text-align: left;
+    margin-right: auto; /* Pushes it to the left */
 }
 
+/* Next button - Extreme Right */
 .next-button {
     background-color: #007bff;
-    font-family: Inter, sans-serif;
-    width: 100px;
-    height: 35px;
-    gap: 8px;
-    padding-top: 8px;
-    padding-right: 32px;
-    padding-bottom: 8px;
-    padding-left: 32px;
-    border-radius: 4px;
-    border: none;
-    position: relative;
-    margin-right: -400px;
     color: #fff;
+    text-align: right;
+    margin-left: auto; /* Pushes it to the right */
+    width: 100px;
+    height: 40px;
 }
 
-
+/* Disabled button styles */
 .back-button:disabled {
     cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .next-button:disabled {
@@ -2380,4 +2431,69 @@ h2 {
     color: #2885FF;
     padding-top: 600px;
 }
-  
+
+/* Adjust height for 1650px */
+@media screen and (max-width: 1650px) {
+    .expenses-form-group {
+        height: 68px;
+    }
+
+    .preview-image-right {
+        padding-top: 550px;
+    }
+}
+
+/* Adjust height for 1200px */
+@media screen and (max-width: 1200px) {
+    .expenses-form-group {
+        height: 64px;
+    }
+
+    .preview-image-right {
+        padding-top: 500px;
+    }
+}
+
+/* Adjust height for 992px */
+@media screen and (max-width: 992px) {
+    .expenses-form-group {
+        height: 60px;
+    }
+
+    .preview-image-right {
+        padding-top: 400px;
+    }
+}
+
+/* Adjust height for 768px */
+@media screen and (max-width: 768px) {
+    .expenses-form-group {
+        height: 55px;
+    }
+
+    .preview-image-right {
+        padding-top: 300px;
+    }
+}
+
+/* Adjust height for 576px */
+@media screen and (max-width: 576px) {
+    .expenses-form-group {
+        height: 50px;
+    }
+
+    .preview-image-right {
+        padding-top: 200px;
+    }
+}
+
+/* Adjust height for 400px */
+@media screen and (max-width: 400px) {
+    .expenses-form-group {
+        height: 45px;
+    }
+
+    .preview-image-right {
+        padding-top: 150px;
+    }
+}

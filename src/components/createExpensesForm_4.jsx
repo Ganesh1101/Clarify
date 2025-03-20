@@ -32,7 +32,7 @@ const CreateExpensesForm_4 = () => {
     };
 
     return (
-        <div className="expenses-form-container" style={{marginBottom:"-10px"}}>
+        <div className="expenses-form-container" style={{marginBottom:-30}}>
             <h2 className="expenses-form-title">Add other Details</h2>
 
             <form onSubmit={handleSubmit}>
