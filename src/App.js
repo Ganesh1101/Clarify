@@ -16,7 +16,9 @@ import SuccessForm from "./components/successForm";
 import Success from "./pages/Success ";
 
 import ForgotPassword from "./pages/ForgotPassword";
-import SetPassword from "./pages/SetPassword";;
+import SetPassword from "./pages/SetPassword";
+import Expenses from "./pages/Expenses";
+
 
 
 const App = () => {
@@ -35,6 +37,7 @@ const App = () => {
         {/* Wrap all other routes inside Layout */}
         <Route path="/dashboard" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="expenses" element={<Expenses />} />
           <Route path="releases" element={<Releases />} />
           <Route path="testcases" element={<TestCases />} />
           <Route path="settings" element={<Settings />} />

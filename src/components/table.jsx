@@ -1,13 +1,24 @@
 import "../assets/Styles/styles.css";
 
+// const getStatusStyle = (status) => {
+//   switch (status) {
+//     case "In Progress":
+//       return { bgColor: "#14FF0026", textColor: "#0B8A00", dotColor: "#0B8A00" }; // Green
+//     case "Pending":
+//       return { bgColor: "#FFBB0326", textColor: "#C79610", dotColor: "#C79610" }; // Yellow
+//     default:
+//       return { bgColor: "#E0E0E0", textColor: "#606060", dotColor: "#606060" }; // Gray (default)
+//   }
+// };
+
 const getStatusStyle = (status) => {
-  switch (status) {
-    case "In Progress":
-      return { bgColor: "#14FF0026", textColor: "#0B8A00", dotColor: "#0B8A00" }; // Green
-    case "Pending":
-      return { bgColor: "#FFBB0326", textColor: "#C79610", dotColor: "#C79610" }; // Yellow
-    default:
-      return { bgColor: "#E0E0E0", textColor: "#606060", dotColor: "#606060" }; // Gray (default)
+  const match = status.match(/\d+/); // Extract the number from the status string
+  const statusNumber = match ? parseInt(match[0], 10) : 0; // Convert to integer
+
+  if (statusNumber > 3) {
+    return { bgColor: "#14FF0026", textColor: "#0B8A00", dotColor: "#0B8A00" }; // Green
+  } else {
+    return { bgColor: "#FFBB0326", textColor: "#C79610", dotColor: "#C79610" }; // Orange
   }
 };
 
@@ -101,6 +112,18 @@ const Table = ({ data, columns }) => {
                         </div>
                       );
                     })()
+                  ) : col.key === "action" ? (
+                    typeof row[col.key] === "function" ? (
+                      <span
+                        role="button"
+                        style={{ cursor: "pointer", fontSize: "18px" }}
+                        onClick={() => row[col.key](row)} // Call the function with the row data
+                      >
+                        <img src={require("../assets/Images/ic_eye .png")} alt="search-icon" />
+                      </span>
+                    ) : (
+                      "-"
+                    )
                   ) : (
                     row[col.key]
                   )}

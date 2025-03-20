@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 const Layout = () => {
   const menuItems = [
     { iconPath: require("../assets/Images/ic_reports.png"), route: "/dashboard" },
-    { iconPath: require("../assets/Images/ic_release.png"), route: "/dashboard/releases" },
+    { iconPath: require("../assets/Images/ic_release.png"), route: "/dashboard/expenses" },
     { iconPath: require("../assets/Images/ic_reports.png"), route: "/dashboard/testcases" },
     { iconPath: require("../assets/Images/ic_Settings.png"), route: "/dashboard/settings" },
   ];
