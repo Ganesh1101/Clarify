@@ -40,7 +40,6 @@ body::-webkit-scrollbar {
   flex: 1;
   padding: 20px;
   background-color: #f1f3f4;
-  /* max-height: 90%; */
 }
 
 /* Sidebar styles */
