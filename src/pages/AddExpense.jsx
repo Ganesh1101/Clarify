@@ -52,7 +52,7 @@ const AddExpense = () => {
                         <p className="expense-option-text">
                             Get step-by-step support with suggestions at your fingertips!
                         </p>
-                        <button className="expense-button-new" >Add New</button>
+                        <button className="expense-button-new"  onClick={() => navigate('/dashboard/create-expense')}>Add New</button>
                     </div>
                 </div>
             </div>
