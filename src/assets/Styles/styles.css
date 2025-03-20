@@ -415,6 +415,10 @@
     .card-link,
     .card-percentage {
         font-size: 0.75rem;
+        
+    }
+    .card-percentage{
+        margin-right: 15px;
     }
 }
 
@@ -472,12 +476,18 @@
 /* Card List */
 .card-list {
     display: flex;
-    gap: 20px;
-    /* Spacing between cards */
-    overflow-x: auto;
-    /* Allows horizontal scrolling if needed */
+    gap: 20px; /* Spacing between cards */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
     padding: 10px;
     white-space: nowrap;
+    
+    /* Hide scrollbar for all devices */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer & Edge */
+}
+
+.card-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 /* KPIWidget */
@@ -578,7 +588,55 @@
     padding: 4px 8px;
     border-radius: 8px;
     white-space: nowrap;
-    margin-right: 20px;
+    margin-right: -10px;
+}
+@media (max-width: 1640px) {
+    .kpi-widget {
+        height: 13.5vh;
+    
+    }
+}
+
+/* Adjustments for Smaller Screens */
+@media ( max-width: 1439px) {
+    .kpi-widget {
+        height: 13vh;
+       
+    }
+}
+@media (max-width: 1279px) {
+    .kpi-widget {
+   
+        height: 10.8vh;
+        width:250px
+    }
+    .kpi-card-footer{
+        margin-top: -15px;
+       
+    }
+    .kpi-card-percentage{
+        margin-right: 0px;
+    }
+    .kpi-card-footer,
+    .kpi-card-link,
+    .kpi-card-percentage {
+        font-size: 0.75rem;
+       
+        
+    }
+}
+@media (max-width: 1024px) {
+    .kpi-widget {
+   
+        height: 10.8vh;
+        width:250px
+    }
+    .kpi-card-footer{
+        margin-top: -15px;
+    }
+    .kpi-card-percentage{
+        margin-right: 0px;
+    }
 }
 
 /* NavBar */
