@@ -511,7 +511,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  background: #f8f9fa;
   padding: 15px 20px;
   padding-top: 15px;
   border-radius: 12px;
@@ -637,10 +637,10 @@ body::-webkit-scrollbar {
 
 @media (max-width: 1279px) {
   .kpi-widget {
-
-    height: 10.8vh;
-    width: 250px
-  }
+    padding-top: 5px;
+    height: 12.5vh;
+    width: 250px
+  }
 
   .kpi-card-footer {
     margin-top: -15px;
