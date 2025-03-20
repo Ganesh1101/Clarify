@@ -18,6 +18,7 @@ import Success from "./pages/Success ";
 import ForgotPassword from "./pages/ForgotPassword";
 import SetPassword from "./pages/SetPassword";
 import Expenses from "./pages/Expenses";
+import AddExpense from "./pages/AddExpense";
 
 
 
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="releases" element={<Releases />} />
           <Route path="testcases" element={<TestCases />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="add-expense" element={<AddExpense />} />
         </Route>
       </Routes>
     </Router>

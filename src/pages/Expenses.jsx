@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "../assets/Styles/styles.css"; // Ensure the CSS file is imported
 import Table from "../components/table";
 import Pagination from "../components/pagination"; // Import the Pagination component
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Expenses = () => {
+    const navigate = useNavigate()
     const handleView = (rowData) => {
         alert(`Viewing details for: ${JSON.stringify(rowData)}`);
     };
@@ -84,8 +85,8 @@ const Expenses = () => {
                         <select className="filter-dropdown">
                             <option>1 Month</option>
                         </select>
-                        <button className="addExpenseButton">
-                            <img src={require("../assets/Images/Ic_add.png")} alt="Add" className="addExpenseIcon" />
+                        <button className="addExpenseButton"  onClick={() => navigate('/dashboard/add-expense')}>
+                            <img src={require("../assets/Images/Ic_add.png")} alt="Add" className="addExpenseIcon"  />
                             Add Expense
                         </button>
                     </div>
