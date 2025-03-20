@@ -19,6 +19,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SetPassword from "./pages/SetPassword";
 import Expenses from "./pages/Expenses";
 import AddExpense from "./pages/AddExpense";
+import ExpenseUpload from "./pages/ExpenseUpload";
 
 
 
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="testcases" element={<TestCases />} />
           <Route path="settings" element={<Settings />} />
           <Route path="add-expense" element={<AddExpense />} />
+          <Route path="upload-expense" element={< ExpenseUpload/>} />
         </Route>
       </Routes>
     </Router>

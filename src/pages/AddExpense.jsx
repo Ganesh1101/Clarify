@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../assets/Styles/styles.css'; // Ensure the CSS file is imported
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddExpense = () => {
+    const navigate = useNavigate()
+
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
+        navigate('/dashboard/upload-expense');
     };
     return (
         <div className="expense-container">
@@ -49,7 +52,7 @@ const AddExpense = () => {
                         <p className="expense-option-text">
                             Get step-by-step support with suggestions at your fingertips!
                         </p>
-                        <button className="expense-button-new">Add New</button>
+                        <button className="expense-button-new" onClick={() => navigate('/dashboard/upload-expense')}>Add New</button>
                     </div>
                 </div>
             </div>
