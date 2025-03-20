@@ -669,7 +669,7 @@
 /* NavBar */
 /* Updated NavBar */
 .navbar {
-  width: 1920px;
+  max-width: 100%;
   height: 55px;
   /* Reduced height */
   display: flex;

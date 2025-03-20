@@ -5,10 +5,10 @@ import Navbar from "../components/Navbar";
 
 const Layout = () => {
   const menuItems = [
-    { iconPath: require("../assets/Images/ic_reports.png"), route: "/" },
-    { iconPath: require("../assets/Images/ic_release.png"), route: "/releases" },
-    { iconPath: require("../assets/Images/ic_reports.png"), route: "/testcases" },
-    { iconPath: require("../assets/Images/ic_Settings.png"), route: "/settings" },
+    { iconPath: require("../assets/Images/ic_reports.png"), route: "/dashboard" },
+    { iconPath: require("../assets/Images/ic_release.png"), route: "/dashboard/releases" },
+    { iconPath: require("../assets/Images/ic_reports.png"), route: "/dashboard/testcases" },
+    { iconPath: require("../assets/Images/ic_Settings.png"), route: "/dashboard/settings" },
   ];
 
   return (
