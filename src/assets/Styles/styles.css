@@ -2300,3 +2300,84 @@ h2 {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+/* expenses form */
+.expenses-form-container {
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.expenses-form-title {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.expenses-form-group {
+    margin-top: 15px;
+    width: 320px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+}
+
+.expenses-form-label {
+    color: #7D7D7D;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+
+}
+
+.expenses-form-input,
+.expenses-form-select {
+    width: 100%;
+    max-width: 320px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #DCDCDD;
+    box-sizing: border-box;
+}
+
+.expenses-form-select {
+    font-style: italic;
+    color: #7D7D7D;
+}
+
+/* ai */
+.expense-container-right {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.expense-form-right {
+    flex: 2;
+}
+
+.expense-preview-right {
+    flex: 1;
+    background: #fff;
+    width: 104px;
+    max-width: 5%;
+    text-align: center;
+    margin-top: -100px;
+    margin-right: -15px;
+}
+
+.preview-image-right {
+    width: 24px;
+    height: 24px;
+    color: #2885FF;
+    padding-top: 600px;
+}
+  
