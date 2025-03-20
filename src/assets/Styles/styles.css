@@ -575,7 +575,7 @@
 
 .kpi-card-link::after {
   content: " >";
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   color: #7b57e0;
   margin-left: 5px;
@@ -587,7 +587,7 @@
 }
 
 .kpi-card-percentage {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: green;
   background: rgba(46, 204, 113, 0.2);
@@ -825,7 +825,7 @@
   .navbar {
     height: 50px;
     padding: 8px 20px;
-    width: 1480px;
+    width: 100%;
   }
 }
 
@@ -834,7 +834,7 @@
   .navbar {
     height: 50px;
     padding: 8px 20px;
-    width: 1320px;
+    width: 100%;
   }
 }
 
